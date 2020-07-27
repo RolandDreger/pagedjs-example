@@ -117,4 +117,7 @@
 		content: " (" attr(href) ") ";
 	}
 	
+	p {
+		text-decoration: none;
+	}
 }
