@@ -117,4 +117,7 @@
 		content: " (" attr(href) ") ";
 	}
 	
+	a::hover {
+		color: red;
+	}
 }
