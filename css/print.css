@@ -117,4 +117,7 @@
 		content: " (" attr(href) ") ";
 	}
 
+	h3 {
+		font-size: 3em;
+	}
 }
