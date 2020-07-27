@@ -112,13 +112,8 @@
 		content: counter(sidenote);
 	}
 
-	/* Originaländerung 1 */
-
 	/* Links */
 	a::after {
 		content: " (" attr(href) ") ";
 	}
-	
-
-	/* Originaländerung 2 */
 }
