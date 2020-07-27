@@ -24,7 +24,6 @@
 	@page:right {
 		margin-right: 20mm;
 		margin-left: 15mm;
-		
 		@right-top {
 			content: element(heading);
 			writing-mode: vertical-rl;
@@ -32,6 +31,20 @@
 			margin-right: 1rem;
 		}
 	}
+
+	.chapter {
+		page: masterOne;
+	}
+
+	@page masterOne:first {
+		@left-top {
+			content: none;
+		}
+		@right-top {
+			content: none;
+		}
+	}
+
 
 	body {
 		counter-reset: chapter 1 sidenote 3;
