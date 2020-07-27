@@ -112,11 +112,13 @@
 		content: counter(sidenote);
 	}
 
+	/* eins master */
+
 	/* Links */
 	a::after {
 		content: " (" attr(href) ") ";
 	}
 	
 
-	/* changes master branch */
+	/* zwei master */
 }
