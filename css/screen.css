@@ -12,8 +12,24 @@ p.runningTitle {
 	display: none;
 }
 
- 
- /* vollkorn-regular - latin */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+figcaption {
+	margin-top: 0.5rem;
+	font-size: 0.8rem;
+}
+
+
+
+/* vollkorn-regular - latin */
 @font-face {
   font-family: 'Vollkorn';
   font-style: normal;

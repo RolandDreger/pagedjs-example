@@ -47,7 +47,7 @@
 
 
 	body {
-		counter-reset: chapter 1 sidenote 3;
+		counter-reset: chapter 1 sidenote 1 figure 1;
 	}
 
 	/* Chapter */
@@ -63,7 +63,7 @@
 		width: 3.2rem;
 	}
 
-	.titlechapter:first-of-type {
+	.chapterTitle:first-of-type {
 		break-before: auto;
 	}
 	
@@ -72,11 +72,11 @@
 	}
 
 	/* Headings */
-	h3.titlechapter {
+	h3.chapterTitle {
 		margin-bottom: 6rem;
 		counter-increment: chapter;
 	}
-	h3.titlechapter::before {
+	h3.chapterTitle::before {
 		content: counter(chapter, upper-roman);
 		float: left;
 		margin-top: 0.12em;
@@ -113,7 +113,28 @@
 	}
 
 	/* Links */
-	a::after {
+	/* a::after {
 		content: " (" attr(href) ") ";
+	} */
+
+	.crossref::after {
+		content: ", page " target-counter(attr(href), page);
 	}
+
+	/* Figures */
+	figcaption {
+		counter-increment: figure;
+	}
+
+	figcaption::before {
+		content: "Fig.: " counter(figure);
+		padding-right: 0.5rem;
+		font-weight: 600;
+	} 
+
+	/* Table of Contents */
+	.toc::after {
+		content: target-text(attr(href));
+		padding-left: 0.5rem;
+	} 
 }
