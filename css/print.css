@@ -112,7 +112,7 @@
 		content: counter(sidenote);
 	}
 
-	/* eins master-pages */
+	/* Originaländerung 1 */
 
 	/* Links */
 	a::after {
@@ -120,5 +120,5 @@
 	}
 	
 
-	/* zwei master-pages */
+	/* Originaländerung 2 */
 }
