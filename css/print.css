@@ -54,6 +54,18 @@
 		}
 	}
 
+	@page:blank {
+		@left-top {
+			content: none;
+		}
+		@right-top {
+			content: none;
+		}
+		@bottom-center {
+			content: none;
+		}
+	}
+	
 	body {
 		counter-reset: chapter 1 sidenote 1 footnote 1 figure 1;
 	}
