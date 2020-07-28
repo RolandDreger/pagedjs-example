@@ -85,6 +85,11 @@
 		line-height: 0.75em;
 	}
 
+	p {
+		orphans: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020) */
+		widows: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020 */
+	}
+
 	p.runningTitle { 
 		display: block;
 		position: running(heading);
@@ -100,6 +105,11 @@
 	.pagedjs_left_page p.runningTitle {
 		transform: rotate(180deg);
 	}
+
+	/* Typography */
+
+
+
 
 	/* Sidenotes */
 	.sidenote {
