@@ -63,9 +63,9 @@
 		width: 3.2rem;
 	}
 
-	.chapterTitle:first-of-type {
+	/* .chapterTitle:first-of-type {
 		break-before: auto;
-	}
+	} */
 	
 	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > * {
 		margin-top: 0;
@@ -86,6 +86,7 @@
 	}
 
 	p {
+		line-height: 1.28rem;
 		orphans: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020) */
 		widows: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020 */
 	}
