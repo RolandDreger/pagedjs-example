@@ -1,4 +1,8 @@
-﻿@media print{
+﻿:root {
+	--line-height: 1.28rem;
+}
+
+@media print{
 
 	@page {
 		size: 105mm 148mm;
@@ -63,6 +67,9 @@
 		width: 3.2rem;
 	}
 
+	.backmatter::after {
+		content: none;
+	}
 	/* .chapterTitle:first-of-type {
 		break-before: auto;
 	} */
@@ -73,7 +80,7 @@
 
 	/* Headings */
 	h3.chapterTitle {
-		margin-bottom: 6rem;
+		margin-bottom: 7.68rem;
 		counter-increment: chapter;
 	}
 	h3.chapterTitle::before {
@@ -85,8 +92,24 @@
 		line-height: 0.75em;
 	}
 
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h1,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h2,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h3,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h4,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h5,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h6,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > p,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > ul, 
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > ol {
+		margin-top: var(--line-height);
+	}
+
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter *:first-child {
+		margin-top: 0;
+	}
+
 	p {
-		line-height: 1.28rem;
+		line-height: var(--line-height);
 		orphans: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020) */
 		widows: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020 */
 	}
@@ -106,11 +129,6 @@
 	.pagedjs_left_page p.runningTitle {
 		transform: rotate(180deg);
 	}
-
-	/* Typography */
-
-
-
 
 	/* Sidenotes */
 	.sidenote {
@@ -146,6 +164,6 @@
 	/* Table of Contents */
 	.toc::after {
 		content: target-text(attr(href));
-		padding-left: 0.5rem;
+		padding-left: 0;
 	} 
 }
