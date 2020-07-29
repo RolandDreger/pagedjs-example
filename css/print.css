@@ -124,6 +124,7 @@
 	}
 
 	p {
+		text-align: justify;
 		line-height: var(--line-height);
 		orphans: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020) */
 		widows: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020 */
