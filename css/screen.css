@@ -8,6 +8,15 @@
 	text-rendering: optimizeLegibility;
 }
 
+section {
+	max-width: 30rem;
+	margin: 0 auto;
+}
+
+h3 {
+	font-size: 2.5rem;
+	line-height: 1.2;
+}
 p.runningTitle {
 	display: none;
 }
@@ -26,6 +35,7 @@ figcaption {
 	margin-top: 0.5rem;
 	font-size: 0.8rem;
 }
+
 
 /* vollkorn-regular - latin */
 @font-face {

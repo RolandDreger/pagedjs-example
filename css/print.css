@@ -86,9 +86,6 @@
 	.backmatter::after {
 		content: none;
 	}
-	/* .chapterTitle:first-of-type {
-		break-before: auto;
-	} */
 	
 	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > * {
 		margin-top: 0;
@@ -96,6 +93,8 @@
 
 	/* Headings */
 	h3.chapterTitle {
+		font-size: 1.2rem;
+		line-height: calc(var(--line-height)* (5/4));
 		margin-bottom: 7.68rem;
 		counter-increment: chapter;
 	}
@@ -104,7 +103,7 @@
 		float: left;
 		margin-top: 0.12em;
 		margin-right: 0.3em;
-		font-size: 3.2em;
+		font-size: 3.0em;
 		line-height: 0.75em;
 	}
 
