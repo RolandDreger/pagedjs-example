@@ -147,18 +147,23 @@
 
 	/* Sidenotes */
 	.sidenote {
+		float: right;
+		transform: translateY(0.3rem);
+		margin-left: 0.7rem;
+		padding-left: 0.5rem;
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		border-left: 3px solid teal;
+		width: 3.6rem;
+		line-height: 1.3;
+		font-size: 0.5rem;
 		font-weight: 400;
 		color: teal;
 		counter-increment: sidenote;
 	}
 	.sidenote::before {
-		padding-left: 0.2rem;
 		padding-right: 0.2rem;
-		content: "(" counter(sidenote);
-	}
-	.sidenote::after {
-		padding-right: 0.2rem;
-		content: ")";
+		content: counter(sidenote);
 	}
 
 	/* Footnotes */
