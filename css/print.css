@@ -219,5 +219,30 @@
 	.toc::after {
 		content: target-text(attr(href)) " – Page " target-counter(attr(href), page);
 		padding-left: 0;
+	}
+
+	/* Index */
+	#index {
+		column-count: 2;
+	}
+
+	#index p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	#index p > a {
+		color: teal;
+		text-decoration: none;
+	}
+	#index p > a:first-child::before {
+		content: "\2002";
 	} 
+	#index p > a::after {
+		content: target-counter(attr(href), page) ", ";
+	} 
+	#index p > a:last-child::after {
+		content: target-counter(attr(href), page);
+	}
+
 }
