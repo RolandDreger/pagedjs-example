@@ -66,6 +66,13 @@
 		}
 	}
 	
+	@page :blank  {
+		background-image: url(../img/24543872445_2fea042681_o.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	
+
 	body {
 		counter-reset: chapter 1 sidenote 1 footnote 1 figure 1;
 	}
@@ -181,17 +188,19 @@
 		padding-right: 0.3rem;
 	}
 
-	/* Links */
-	/* a::after {
-		content: " (" attr(href) ") ";
-	} */
+	/* Crossreferences */
+	.crossref {
+		color: teal;
+		text-decoration: none;
+	}
 
 	.crossref::after {
-		content: ", page " target-counter(attr(href), page);
+		content: " – Page " target-counter(attr(href), page);
 	}
 
 	/* Figures */
 	figcaption {
+		text-decoration: none;
 		counter-increment: figure;
 	}
 
@@ -202,8 +211,12 @@
 	} 
 
 	/* Table of Contents */
+	.toc {
+		color: teal;
+		text-decoration: none;
+	}
 	.toc::after {
-		content: target-text(attr(href));
+		content: target-text(attr(href)) " – Page " target-counter(attr(href), page);
 		padding-left: 0;
 	} 
 }
