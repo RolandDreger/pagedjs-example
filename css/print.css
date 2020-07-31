@@ -195,17 +195,18 @@
 	}
 
 	.crossref::after {
-		content: " – Page " target-counter(attr(href), page);
+		content: "Fig.: " target-text(attr(href)) " – Page " target-counter(attr(href), page);
 	}
 
 	/* Figures */
 	figcaption {
 		text-decoration: none;
 		counter-increment: figure;
+		text-align: center;
 	}
 
 	figcaption::before {
-		content: "Fig.: " counter(figure);
+		content: "Fig. " counter(figure) ":";
 		padding-right: 0.5rem;
 		font-weight: 600;
 	} 
