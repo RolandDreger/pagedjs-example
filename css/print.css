@@ -81,6 +81,9 @@
 	.chapter {
 		break-before: right;
 		margin-bottom: 6rem;
+		bookmark-level: 1;
+		bookmark-label: 'Willkommen';
+		bookmark-state: open;
 	}
 
 	.chapter::after {
@@ -170,6 +173,7 @@
 		color: teal;
 		counter-increment: sidenote;
 	}
+
 	.sidenote::before {
 		padding-right: 0.2rem;
 		content: counter(sidenote);
@@ -188,8 +192,6 @@
 		padding-right: 0.3rem;
 	}
 
-	
-
 	/* Figures */
 	figcaption {
 		text-decoration: none;
@@ -207,23 +209,24 @@
 	#tof {
 		list-style-type: square;
 	}
-	.crossref {
+	#tof li > a {
 		color: teal;
 		text-decoration: none;
 	}
 
-	.crossref::after {
+	#tof li > a::after {
 		content: "Fig.: " target-text(attr(href)) " – Page " target-counter(attr(href), page);
 	}
+
 	/* Table of Contents */
 	#toc {
 		list-style-type: upper-roman;
 	}
-	a.toc {
+	#toc li > a {
 		color: teal;
 		text-decoration: none;
 	}
-	a.toc::after {
+	#toc li > a::after {
 		content: target-text(attr(href)) " – Page " target-counter(attr(href), page);
 		padding-left: 0;
 	}
