@@ -2,16 +2,17 @@
 	--line-height: 1.28rem;
 }
 
-@media print{
+@media print {
 
 	@page {
 		size: 105mm 148mm;
 		margin-top: 15mm;
 		margin-bottom: 25mm;
-
+		/* Pagination Area */
 		@bottom-center {
 			content: "– " counter(page) " –";
 		}
+		/* Footnote Area */
 		@footnote {
 			float:bottom;
 		}
@@ -20,7 +21,7 @@
 	@page:left {
 		margin-right: 15mm;
 		margin-left: 20mm;
-
+		/* Running Title */
 		@left-top {
 			content: element(heading);
 			writing-mode: vertical-lr;
@@ -32,7 +33,7 @@
 	@page:right {
 		margin-right: 20mm;
 		margin-left: 15mm;
-
+		/* Running Title */
 		@right-top {
 			content: element(heading);
 			writing-mode: vertical-rl;
@@ -41,20 +42,47 @@
 		}
 	}
 
+	/* Master Page A */
 	.chapter {
-		page: masterOne;
+		page: masterA;
 	}
 
-	@page masterOne:first {
-		@left-top {
-			content: none;
-		}
+	@page masterA:first {
 		@right-top {
 			content: none;
 		}
 	}
 
+	/* Master Page B */
+	.backmatter {
+		page: masterB;
+	}
+
+	@page masterB:right {
+		@top-right-corner {
+			content: "";
+			border-right: 3mm solid #000000;
+		}
+	}
+
+	@page masterB:left {
+		@top-left-corner {
+			content: "";
+			border-right: 3mm solid #000000;
+		}
+	}
+
+	@page masterB:first {
+		@right-top {
+			content: none;
+		}
+	}
+
+	/* Blank Page */
 	@page:blank {
+		background-image: url(../img/24543872445_2fea042681_o.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
 		@left-top {
 			content: none;
 		}
@@ -66,14 +94,9 @@
 		}
 	}
 	
-	@page :blank  {
-		background-image: url(../img/24543872445_2fea042681_o.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-	
 
 	body {
+		font-size: 0.9rem;
 		counter-reset: chapter 1 sidenote 1 footnote 1 figure 1;
 	}
 
@@ -101,20 +124,24 @@
 		margin-top: 0;
 	}
 
-	/* Headings */
-	h3.chapterTitle {
+	/* Headings and Paragraphs */
+	h2.chapterTitle {
 		font-size: 1.2rem;
 		line-height: calc(var(--line-height)* (5/4));
 		margin-bottom: 7.68rem;
 		counter-increment: chapter;
 	}
-	h3.chapterTitle::before {
+	h2.chapterTitle::before {
 		content: counter(chapter, upper-roman);
 		float: left;
 		margin-top: 0.12em;
 		margin-right: 0.3em;
 		font-size: 3.0em;
 		line-height: 0.75em;
+	}
+
+	#appendix h3 {
+		font-size: 0.9rem;
 	}
 
 	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h1,
@@ -129,7 +156,8 @@
 		margin-top: var(--line-height);
 	}
 
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter *:first-child {
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter *:first-child,
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.backmatter *:first-child {
 		margin-top: 0;
 	}
 
