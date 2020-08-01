@@ -12,9 +12,9 @@
 		@bottom-center {
 			content: "– " counter(page) " –";
 		}
-		/* Footnote Area */
+		/* Footnote Area (currently not supported in Paged.js) */
 		@footnote {
-			float:bottom;
+			float: bottom;
 		}
 	}
 	
@@ -207,10 +207,21 @@
 		content: counter(sidenote);
 	}
 
-	/* Footnotes */
+	a.sidenode-ref-mark {
+		font-size: 0.7rem;
+		color: teal;
+		text-decoration: none;
+		vertical-align: super;
+	}
+	
+	a.sidenode-ref-mark::before {
+		content: counter(sidenote);
+	}
+
+	/* Footnotes (currently not supported in Paged.js) */
 	.footnote {
 		float: footnote;
-		vertical-align:super;
+		vertical-align: super;
 		font-size: 0.6rem;
 		counter-increment: footnote;
 	}
