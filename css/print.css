@@ -164,6 +164,7 @@
 	p {
 		text-align: justify;
 		line-height: var(--line-height);
+		font-variant-ligatures: normal;
 		orphans: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020) */
 		widows: 2; /* currently not supported in Mozilla Firefox (Jun 28, 2020 */
 	}
@@ -208,10 +209,9 @@
 	}
 
 	a.sidenode-ref-mark {
-		font-size: 0.7rem;
 		color: teal;
 		text-decoration: none;
-		vertical-align: super;
+		font-variant-position: super;
 	}
 	
 	a.sidenode-ref-mark::before {
@@ -254,7 +254,7 @@
 	}
 
 	#tof li > a::after {
-		content: "Fig.: " target-text(attr(href)) " – Page " target-counter(attr(href), page);
+		content: "Fig. “" target-text(attr(href)) "” – Page\00A0" target-counter(attr(href), page);
 	}
 
 	/* Table of Contents */
@@ -266,7 +266,7 @@
 		text-decoration: none;
 	}
 	#toc li > a::after {
-		content: target-text(attr(href)) " – Page " target-counter(attr(href), page);
+		content: target-text(attr(href)) " – Page\00A0" target-counter(attr(href), page);
 		padding-left: 0;
 	}
 
