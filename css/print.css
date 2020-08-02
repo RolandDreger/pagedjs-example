@@ -24,8 +24,7 @@
 		/* Running Title */
 		@left-top {
 			content: element(heading);
-			writing-mode: sideways-lr;
-			position: absolute;
+			writing-mode: vertical-lr;
 			text-align: right;
 			margin-top: 0.3rem;
 			margin-left: 1rem;
@@ -38,7 +37,7 @@
 		/* Running Title */
 		@right-top {
 			content: element(heading);
-			writing-mode: sideways-rl;
+			writing-mode: vertical-rl;;
 			text-align: left;
 			margin-top: 0.3rem;
 			margin-right: 1rem;
@@ -184,6 +183,10 @@
 		text-transform: uppercase;
 	}
 
+	.pagedjs_left_page p.runningTitle {
+		transform: rotate(180deg);
+	}
+	
 	/* Sidenotes */
 	.sidenote {
 		float: right;
