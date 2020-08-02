@@ -24,7 +24,9 @@
 		/* Running Title */
 		@left-top {
 			content: element(heading);
-			writing-mode: vertical-lr;
+			writing-mode: sideways-lr;
+			position: absolute;
+			text-align: right;
 			margin-top: 0.3rem;
 			margin-left: 1rem;
 		}
@@ -36,7 +38,8 @@
 		/* Running Title */
 		@right-top {
 			content: element(heading);
-			writing-mode: vertical-rl;
+			writing-mode: sideways-rl;
+			text-align: left;
 			margin-top: 0.3rem;
 			margin-right: 1rem;
 		}
@@ -96,8 +99,7 @@
 	
 
 	body {
-		font-size: 0.9rem;
-		counter-reset: chapter 1 sidenote 1 footnote 1 figure 1;
+		counter-reset: chapter 1 sidenote 1 sidenodeRefMark 1 footnote 1 figure 1;
 	}
 
 	/* Chapter */
@@ -127,7 +129,7 @@
 	/* Headings and Paragraphs */
 	h2.chapterTitle {
 		font-size: 1.2rem;
-		line-height: calc(var(--line-height)* (5/4));
+		line-height: calc(var(--line-height) * (5/4));
 		margin-bottom: 7.68rem;
 		counter-increment: chapter;
 	}
@@ -182,10 +184,6 @@
 		text-transform: uppercase;
 	}
 
-	.pagedjs_left_page p.runningTitle {
-		transform: rotate(180deg);
-	}
-
 	/* Sidenotes */
 	.sidenote {
 		float: right;
@@ -213,15 +211,15 @@
 		color: teal;
 		text-decoration: none;
 		font-variant-position: super;
+		counter-increment: sidenodeRefMark; /* Own counter to keep mark and term together */
 	}
 	
 	a.sidenode-ref-mark::before {
-		content: counter(sidenote);
+		content: counter(sidenodeRefMark);
 	}
 
 	/* Footnotes (currently not supported in Paged.js) */
 	.footnote {
-		color: #777;
 		float: footnote;
 		vertical-align: super;
 		font-size: 0.5rem;
@@ -230,12 +228,15 @@
 	}
 
 	.footnote::before {
-		content: counter(footnote);
+		content: counter(footnote, upper-roman);
+		padding-left: 0.1rem;
 		padding-right: 0.3rem;
 	}
 
 	/* Figures */
 	figcaption {
+		margin-top: calc(var(--line-height) / 2);
+		font-size: 0.8rem;
 		text-decoration: none;
 		counter-increment: figure;
 		text-align: center;
@@ -247,20 +248,7 @@
 		font-weight: 600;
 	} 
 
-  /* Table of Figures */
-	#tof {
-		list-style-type: square;
-	}
-	#tof li > a {
-		color: teal;
-		text-decoration: none;
-	}
-
-	#tof li > a::after {
-		content: "Fig. “" target-text(attr(href)) "” – Page\00A0" target-counter(attr(href), page);
-	}
-
-	/* Table of Contents */
+  /* Table of Contents */
 	#toc {
 		list-style-type: upper-roman;
 	}
@@ -273,9 +261,33 @@
 		padding-left: 0;
 	}
 
+	
+	/* Table of Figures */
+	#tof {
+		list-style-type: none;
+	}
+
+	#tof li::before {
+		content: '\261B';
+		margin-left: -1rem;
+		margin-right: 0.2rem;
+		position: relative;
+		top: -0.1rem;
+	}
+
+	#tof li > a {
+		color: teal;
+		text-decoration: none;
+	}
+
+	#tof li > a::after {
+		content: "Fig. “" target-text(attr(href)) "” – Page\00A0" target-counter(attr(href), page);
+	}
+
 	/* Index */
 	#index {
 		column-count: 2;
+		column-gap: 5mm;
 	}
 
 	#index p {
