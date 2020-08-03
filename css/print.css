@@ -213,7 +213,9 @@
 	a.sidenode-ref-mark {
 		color: teal;
 		text-decoration: none;
-		font-variant-position: super;
+		vertical-align: super;
+		font-size: 0.7em;
+		/* font-variant-position: super; *//* not supported in Google Chrome */
 		counter-increment: sidenodeRefMark; /* Own counter to keep mark and term together */
 	}
 	
