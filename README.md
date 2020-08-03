@@ -6,8 +6,8 @@ You can find a short video of it on Vimeo.
 
 ## Credits
 
-**Script library**: [Paged.js](https://www.pagedjs.org/)
-**Font:** [Vollkorn](http://vollkorn-typeface.com/)
+**Script library**: [Paged.js](https://www.pagedjs.org/)\
+**Font:** [Vollkorn](http://vollkorn-typeface.com/)\
 **Images:** [Biodiversity Heritage Library](https://www.biodiversitylibrary.org)
  
 
