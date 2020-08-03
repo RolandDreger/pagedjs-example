@@ -112,9 +112,9 @@
 
 	.chapter::after {
 		display: block;
-		margin: auto;
-		content: url(../img/roland_dreger_logo.svg);
-		width: 3.2rem;
+		margin: 2rem auto;
+		content: url(../img/floral_heart.svg);
+		width: 2rem;
 	}
 
 	.backmatter::after {
