@@ -7,7 +7,7 @@
 	@page {
 		size: 105mm 148mm;
 		margin-top: 15mm;
-		margin-bottom: 25mm;
+		margin-bottom: 26mm;
 		/* Pagination Area */
 		@bottom-center {
 			content: "– " counter(page) " –";
@@ -121,10 +121,15 @@
 		content: none;
 	}
 	
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > * {
+	/* Flow Space */
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section > * {
 		margin-top: 0;
+	}	
+	
+	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section > * + * {
+		margin-top: var(--line-height);
 	}
-
+	
 	/* Headings and Paragraphs */
 	h2.chapterTitle {
 		font-size: 1.2rem;
@@ -145,22 +150,7 @@
 		font-size: 0.9rem;
 	}
 
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h1,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h2,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h3,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h4,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h5,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h6,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > p,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > ul, 
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > ol {
-		margin-top: var(--line-height);
-	}
 
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter *:first-child,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.backmatter *:first-child {
-		margin-top: 0;
-	}
 
 	p {
 		text-align: justify;
