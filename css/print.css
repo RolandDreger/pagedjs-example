@@ -101,6 +101,15 @@
 		counter-reset: chapter 1 sidenote 1 sidenodeRefMark 1 footnote 1 figure 1;
 	}
 
+	.flow > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.flow > * ~ * {
+		margin-top: var(--line-height);
+	}
+
 	/* Chapter */
 	.chapter {
 		break-before: right;
@@ -139,15 +148,6 @@
 
 	#appendix h3 {
 		font-size: 0.9rem;
-	}
-
-	.flow > * {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-
-	.flow > * ~ * {
-		margin-top: var(--line-height);
 	}
 
 	.flow.backmatter > h3 ~ ul,
