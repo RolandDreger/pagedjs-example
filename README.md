@@ -2,7 +2,7 @@
 
 Example of a book section designed using PrintCSS (CSS Paged Media) and paged.js
  
-You can find a short video of it on Vimeo.
+You can find a short video about it on [Vimeo](https://vimeo.com/444348344).
 
 ## Credits
 
