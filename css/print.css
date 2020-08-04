@@ -7,7 +7,7 @@
 	@page {
 		size: 105mm 148mm;
 		margin-top: 15mm;
-		margin-bottom: 25mm;
+		margin-bottom: 28mm;
 		/* Pagination Area */
 		@bottom-center {
 			content: "– " counter(page) " –";
@@ -121,15 +121,11 @@
 		content: none;
 	}
 	
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > * {
-		margin-top: 0;
-	}
-
 	/* Headings and Paragraphs */
 	h2.chapterTitle {
 		font-size: 1.2rem;
 		line-height: calc(var(--line-height) * (5/4));
-		margin-bottom: 7.68rem;
+		margin-bottom: calc(var(--line-height) * 5 + 0.65rem);
 		counter-increment: chapter;
 	}
 	h2.chapterTitle::before {
@@ -145,21 +141,19 @@
 		font-size: 0.9rem;
 	}
 
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h1,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h2,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h3,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h4,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h5,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > h6,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > p,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > ul, 
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter > ol {
+	.flow > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.flow > * ~ * {
 		margin-top: var(--line-height);
 	}
 
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.chapter *:first-child,
-	.pagedjs_page .pagedjs_pagebox .pagedjs_area .pagedjs_page_content section.backmatter *:first-child {
-		margin-top: 0;
+	.flow.backmatter > h3 ~ ul,
+	.flow.backmatter > h3 ~ ol,
+	.flow.backmatter #index {
+		margin-top: calc(var(--line-height) / 2);
 	}
 
 	p {
@@ -216,6 +210,7 @@
 		position: relative;
 		top: -0.4rem;
 		font-size: 0.7em;
+		line-height: 1;
 		/* font-variant-position: super; *//* not supported in Google Chrome */
 		counter-increment: sidenodeRefMark; /* Own counter to keep mark and term together */
 	}
@@ -230,6 +225,7 @@
 		position: relative;
 		top: -0.4rem;
 		font-size: 0.5rem;
+		line-height: 1;
 		text-justify: none;
 		counter-increment: footnote;
 	}
@@ -241,8 +237,12 @@
 	}
 
 	/* Figures */
+	.flow figure {
+    margin-top: 0.9rem;
+	} 
+	
 	figcaption {
-		margin-top: calc(var(--line-height) / 2);
+		margin-top: 0.35rem;
 		font-size: 0.8rem;
 		text-decoration: none;
 		counter-increment: figure;
