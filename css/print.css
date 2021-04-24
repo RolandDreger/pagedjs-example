@@ -15,6 +15,7 @@
 		/* Footnote Area (currently not supported in Paged.js) */
 		@footnote {
 			float: bottom;
+			margin-top: 8mm;
 		}
 	}
 	
@@ -222,18 +223,12 @@
 	/* Footnotes (currently not supported in Paged.js) */
 	.footnote {
 		float: footnote;
-		position: relative;
-		top: -0.4rem;
 		font-size: 0.5rem;
-		line-height: 1;
-		text-justify: none;
 		counter-increment: footnote;
 	}
 
 	.footnote::before {
 		content: counter(footnote, upper-roman);
-		padding-left: 0.1rem;
-		padding-right: 0.3rem;
 	}
 
 	/* Figures */

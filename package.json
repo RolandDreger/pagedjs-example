@@ -1,0 +1,24 @@
+{
+  "name": "pagejs",
+  "version": "1.0.0",
+  "description": "Example of a book section designed using PrintCSS (CSS Paged Media) and paged.js",
+  "main": "index.js",
+  "dependencies": {
+    "pagedjs": "^0.1.43"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RolandDreger/pagedjs-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RolandDreger/pagedjs-example/issues"
+  },
+  "homepage": "https://github.com/RolandDreger/pagedjs-example#readme"
+}
